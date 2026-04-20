@@ -6,13 +6,16 @@ $container-offsets: 15px;
 $main-text-color: #000000;
 $bg-page-color: #ffffff;
 $accent-color: #e68311;
+$logo-h-color: #ffa638;
+$logo-f-color: #000000;
 
 // Typography
-
 $ff-Kodchasan: "Kodchasan", "Arial", sans-serif;
 $main-fsz: 16px;
 
 // Viewport
-
 $vp-tablet: 1023px;
 $vp-mobile: 767px;
+
+// Animations
+$transition-300: 0.3s ease-in-out;
