@@ -28,3 +28,12 @@
     }
   }
 }
+
+@mixin width-child($c-gap, $r-gap, $cards) {
+  column-gap: $c-gap;
+  row-gap: $r-gap;
+
+  & > * {
+    width: calc((100% - (#{$c-gap} * (#{$cards} - 1))) / #{$cards});
+  }
+}

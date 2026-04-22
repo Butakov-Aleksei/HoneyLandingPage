@@ -26,10 +26,6 @@ main {
   flex-grow: 1;
 }
 
-section {
-  margin: 0 0 clamp(3.125rem, 0.9375rem + 10.9375vw, 11.875rem);
-}
-
 img {
   display: block;
   height: auto;

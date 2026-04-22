@@ -1,0 +1,15 @@
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 50px;
+  border: 2px solid currentColor;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.6;
+  color: $main-text-color;
+  background-color: transparent;
+  cursor: pointer;
+  user-select: none;
+}
