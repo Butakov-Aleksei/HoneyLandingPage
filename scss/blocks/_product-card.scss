@@ -67,7 +67,7 @@
 
     @include focus-visible {
       & {
-        color: #ffffff;
+        color: $color-white;
         border-radius: 10px;
       }
 
@@ -77,7 +77,7 @@
     }
     @include any-hover {
       & {
-        color: #ffffff;
+        color: $color-white;
         border-radius: 10px;
       }
 

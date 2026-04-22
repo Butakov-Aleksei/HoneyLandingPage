@@ -26,6 +26,10 @@ main {
   flex-grow: 1;
 }
 
+section {
+  margin: $margin-section;
+}
+
 img {
   display: block;
   height: auto;

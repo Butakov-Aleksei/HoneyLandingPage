@@ -374,6 +374,10 @@ main {
   flex-grow: 1;
 }
 
+section {
+  margin: 0 0 clamp(3.125rem, -1.9012rem + 10.4849vw, 8.125rem);
+}
+
 img {
   display: block;
   height: auto;
@@ -423,12 +427,20 @@ ul, ol {
   flex-shrink: 0;
 }
 
+.main-title {
+  font-size: clamp(1.75rem, 0.5599rem + 5.9504vw, 6.25rem);
+  font-weight: 700;
+  line-height: 1.3;
+  color: #0b0b0b;
+}
+
 .btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 18px 50px;
+  padding: clamp(0.625rem, 0.4928rem + 0.6612vw, 1.125rem) clamp(0.625rem, -0.0362rem + 3.3058vw, 3.125rem);
   border: 2px solid currentColor;
+  border-radius: 5px;
   font-family: inherit;
   font-size: 18px;
   font-weight: 700;
@@ -464,7 +476,6 @@ ul, ol {
   transition: outline-color 0.3s ease-in-out;
 }
 .main-nav__link:focus {
-  border: none;
   outline: none;
 }
 .main-nav__link:focus-visible {
@@ -544,7 +555,6 @@ ul, ol {
   overflow: hidden;
 }
 .product-card__btn:focus {
-  border: none;
   outline: none;
 }
 .product-card__btn:focus-visible {
@@ -597,9 +607,177 @@ ul, ol {
   color: #ffa638;
 }
 
-.brands {
-  margin: 0 0 clamp(3.125rem, -1.9012rem + 10.4849vw, 8.125rem);
+.hero__wrap {
+  display: flex;
+  flex-direction: column;
+  min-height: 70vh;
+  border-radius: 30px;
+  background-color: #ffd877;
+  background-image: url("../img/hero/honey-hero-bees.png"), url("../img/hero/honey-hero.svg"), linear-gradient(56.85deg, #ff9d2d 1.663%, #ffd877 93.206%);
+  background-image: image-set(url("../img/hero/honey-hero-bees.webp") type("image/webp"), url("../img/hero/honey-hero-bees.png") type("image/png")), url("../img/hero/honey-hero.svg"), linear-gradient(56.85deg, #ff9d2d 1.663%, #ffd877 93.206%);
+  background-repeat: no-repeat;
+  background-position: top clamp(1.25rem, -5.2841rem + 13.6304vw, 7.75rem) right 10px, top clamp(2.5rem, -0.6414rem + 6.5531vw, 5.625rem) right 13px, 0 0;
+  background-size: clamp(12.5rem, 4.4174rem + 40.4132vw, 43.0625rem) auto, 94% auto, auto;
 }
+@media (min-resolution: 2dppx) {
+  .hero__wrap {
+    background-image: url("../img/hero/honey-hero-bees@2x.png"), url("../img/hero/honey-hero.svg"), linear-gradient(56.85deg, #ff9d2d 1.663%, #ffd877 93.206%);
+    background-image: image-set(url("../img/hero/honey-hero-bees@2x.webp") type("image/webp"), url("../img/hero/honey-hero-bees@2x.png") type("image/png")), url("../img/hero/honey-hero.svg"), linear-gradient(56.85deg, #ff9d2d 1.663%, #ffd877 93.206%);
+  }
+}
+@media (max-width: 767px) {
+  .hero__wrap {
+    min-height: 55vh;
+    margin: 0 -13px;
+    border-radius: 10px;
+  }
+}
+.hero__inner {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: clamp(1.25rem, -1.4277rem + 13.3884vw, 11.375rem) clamp(1.25rem, -1.345rem + 12.9752vw, 11.0625rem) clamp(1.875rem, 0.0899rem + 8.9256vw, 8.625rem);
+}
+.hero__title {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  flex-direction: column;
+  max-width: min(630px, 60%);
+  margin: 0 0 clamp(1.5rem, -0.6348rem + 3.9318vw, 4.38rem);
+  gap: 10px;
+}
+.hero__title span {
+  position: relative;
+  z-index: 10;
+}
+.hero__title::after {
+  content: "";
+  position: absolute;
+  bottom: clamp(0rem, -0.2479rem + 1.2397vw, 0.9375rem);
+  left: 0;
+  width: clamp(4.375rem, 2.3915rem + 9.9174vw, 11.875rem);
+  height: clamp(3.125rem, 1.8027rem + 6.6116vw, 8.125rem);
+  background-image: url("../img/default/bee.png");
+  background-image: image-set(url("../img/default/bee.webp") type("image/webp"), url("../img/default/bee.png") type("image/png"));
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+@media (min-resolution: 2dppx) {
+  .hero__title::after {
+    background-image: image-set(url("../img/default/bee@2x.webp") type("image/webp"), url("../img/default/bee@2x.png") type("image/png"));
+  }
+}
+.hero__title span:first-child {
+  align-self: flex-start;
+}
+.hero__title span:last-child {
+  position: relative;
+  align-self: flex-end;
+}
+.hero__title span:last-child::before {
+  content: "";
+  position: absolute;
+  bottom: 18%;
+  left: -100%;
+  width: 95%;
+  height: 2px;
+  opacity: 0.5;
+  background-color: #000000;
+}
+.hero__btns {
+  display: flex;
+  margin-top: auto;
+  gap: 15px 30px;
+}
+@media (max-width: 1023px) {
+  .hero__btns {
+    gap: 15px;
+  }
+}
+@media (max-width: 1023px) and (orientation: landscape) {
+  .hero__btns {
+    transform: translateY(80%);
+  }
+}
+@media (max-width: 767px) {
+  .hero__btns {
+    justify-content: space-between;
+  }
+}
+.hero__btn {
+  position: relative;
+  overflow: hidden;
+  border-color: #000000;
+  color: #ffffff;
+  transition: border-radius 0.3s ease-in-out 0.3s, border-color 0.5s ease-in-out 0.3s, background-color 0.3s ease-in-out;
+}
+.hero__btn:focus {
+  outline: none;
+}
+.hero__btn:focus-visible {
+  border-color: #ffffff;
+  border-radius: 10px;
+  background-color: transparent;
+}
+.hero__btn:focus-visible::before {
+  clip-path: circle(0% at 50% 50%);
+}
+@media (any-hover: hover) {
+  .hero__btn:hover {
+    border-color: #ffffff;
+    border-radius: 10px;
+    background-color: transparent;
+  }
+  .hero__btn:hover::before {
+    clip-path: circle(0% at 50% 50%);
+  }
+}
+.hero__btn span {
+  position: relative;
+  color: inherit;
+}
+.hero__btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  transition: clip-path 0.8s ease-in-out;
+  clip-path: circle(80% at 50% 50%);
+}
+.hero__link {
+  border-color: #000000;
+  transition: color 0.3s ease-in-out, border-radius 0.3s ease-in-out 0.3s, border-color 0.5s ease-in-out;
+}
+.hero__link:focus {
+  outline: none;
+}
+.hero__link:focus-visible {
+  border-color: #ffffff;
+  border-radius: 10px;
+  color: #ffffff;
+}
+@media (any-hover: hover) {
+  .hero__link:hover {
+    border-color: #ffffff;
+    border-radius: 10px;
+    color: #ffffff;
+  }
+}
+@media (max-width: 767px) and (orientation: portrait) {
+  .hero__link {
+    transform: translateY(-50%);
+  }
+}
+.hero__link span {
+  color: inherit;
+}
+
 .brands__title {
   margin: 0 0 clamp(1.25rem, -0.6348rem + 3.9318vw, 3.125rem);
   font-size: clamp(1.375rem, 0.9948rem + 1.9008vw, 2.8125rem);
@@ -618,6 +796,18 @@ ul, ol {
 .brands__link {
   display: flex;
   color: #a6a6a6;
+  transition: color 0.5s ease-in-out;
+}
+.brands__link:focus {
+  outline: none;
+}
+.brands__link:focus-visible {
+  color: #e58211;
+}
+@media (any-hover: hover) {
+  .brands__link:hover {
+    color: #e58211;
+  }
 }
 .brands__link svg {
   flex-shrink: 0;
@@ -625,9 +815,6 @@ ul, ol {
   height: 38px;
 }
 
-.product {
-  margin: 0 0 clamp(3.125rem, -1.9012rem + 10.4849vw, 8.125rem);
-}
 .product__title {
   margin: 0 0 clamp(1.25rem, -0.6348rem + 3.9318vw, 3.125rem);
   font-size: clamp(1.375rem, 0.9948rem + 1.9008vw, 2.8125rem);

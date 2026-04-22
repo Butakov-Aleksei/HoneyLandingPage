@@ -1,6 +1,4 @@
 .brands {
-  margin: $margin-section;
-
   &__title {
     margin: $margin-title;
     font-size: $title-section-fsz;
@@ -22,6 +20,15 @@
   &__link {
     display: flex;
     color: $brands-color-logo;
+    transition: color $transition-500;
+
+    @include focus-visible {
+      color: $accent-color;
+    }
+
+    @include any-hover {
+      color: $accent-color;
+    }
 
     & svg {
       flex-shrink: 0;

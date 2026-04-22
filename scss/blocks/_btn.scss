@@ -2,8 +2,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 18px 50px;
+  padding: clamp(.625rem, .4928rem + .6612vw, 1.125rem) clamp(.625rem, -.0362rem + 3.3058vw, 3.125rem);
   border: 2px solid currentColor;
+  border-radius: 5px;
   font-family: inherit;
   font-size: 18px;
   font-weight: 700;
