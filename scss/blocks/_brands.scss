@@ -1,0 +1,32 @@
+.brands {
+  margin: $margin-section;
+
+  &__title {
+    margin: $margin-title;
+    font-size: $title-section-fsz;
+    font-weight: 700;
+    line-height: 1.6;
+  }
+
+  &__list {
+    display: flex;
+    overflow-x: auto;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 -#{$container-offsets} -#{$container-offsets};
+    padding: 0 $container-offsets $container-offsets;
+
+    gap: 20px clamp(2.5rem, .6818rem + 9.0909vw, 9.375rem);
+  }
+
+  &__link {
+    display: flex;
+    color: $brands-color-logo;
+
+    & svg {
+      flex-shrink: 0;
+      width: auto;
+      height: 38px;
+    }
+  }
+}
