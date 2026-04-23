@@ -1,15 +1,17 @@
 .product {
   &__title {
     margin: $margin-title;
-    font-size: clamp(1.375rem, 0.9948rem + 1.9008vw, 2.8125rem);
+    font-size: clamp(1.375rem, .9948rem + 1.9008vw, 2.8125rem);
     font-weight: 700;
     line-height: 1.6;
+    text-transform: capitalize;
   }
 
   &__list {
     display: flex;
     flex-wrap: wrap;
-    @include width-child(clamp(1.25rem, -0.6348rem + 3.9318vw, 3.125rem), 20px, 2);
+
+    @include width-child(clamp(1.25rem, -.6348rem + 3.9318vw, 3.125rem), 20px, 2);
     @include vp-767 {
       @include width-child(0px, 15px, 1);
     }

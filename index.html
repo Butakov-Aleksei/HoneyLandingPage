@@ -19,7 +19,7 @@
 <body>
   <header class="header">
     <div class="header__container container">
-      <a class="header__logo logo" aria-label="Logo Honey">
+      <a href="/" class="header__logo logo" aria-label="Logo Honey">
         <svg width="92" height="40" aria-hidden="true">
           <use xlink:href="img/sprite.svg#icon-logo"></use>
         </svg>
@@ -32,17 +32,17 @@
             </a>
           </li>
           <li class="main-nav__item">
-            <a href="#" class="main-nav__link">
+            <a href="#" class="main-nav__link" target="_blank">
               About
             </a>
           </li>
           <li class="main-nav__item">
             <a href="#products" class="main-nav__link">
-              Our Product
+              Our product
             </a>
           </li>
           <li class="main-nav__item">
-            <a href="#" class="main-nav__link">
+            <a href="#" class="main-nav__link" target="_blank">
               Contact
             </a>
           </li>
@@ -66,7 +66,7 @@
                   Buy now
                 </span>
               </button>
-              <a href="#" class="hero__link btn">
+              <a href="#" class="hero__link btn" target="_blank">
                 <span>
                   Learn more
                 </span>
@@ -78,31 +78,31 @@
     </section>
     <section class="brands">
       <div class="brands__container container">
-        <h2 class="brands__title">Our Trusted Shops</h2>
+        <h2 class="brands__title">Our trusted shops</h2>
         <ul class="brands__list">
           <li class="brands__item">
-            <a href="#" class="brands__link" aria-label="logo luxopica">
+            <a href="#" class="brands__link" target="_blank" aria-label="logo luxopica">
               <svg width="144" aria-hidden="true">
                 <use xlink:href="img/sprite.svg#luxopica"></use>
               </svg>
             </a>
           </li>
           <li class="brands__item">
-            <a href="#" class="brands__link" aria-label="logo miu">
+            <a href="#" class="brands__link" target="_blank" aria-label="logo miu">
               <svg width="228" aria-hidden="true">
                 <use xlink:href="img/sprite.svg#miu-logo"></use>
               </svg>
             </a>
           </li>
           <li class="brands__item">
-            <a href="#" class="brands__link" aria-label="logo dunkin">
+            <a href="#" class="brands__link" target="_blank" aria-label="logo dunkin">
               <svg width="205" aria-hidden="true">
                 <use xlink:href="img/sprite.svg#dunkin"></use>
               </svg>
             </a>
           </li>
           <li class="brands__item">
-            <a href="#" class="brands__link" aria-label="logo burberry">
+            <a href="#" class="brands__link" target="_blank" aria-label="logo burberry">
               <svg width="263" aria-hidden="true">
                 <use xlink:href="img/sprite.svg#burberry"></use>
               </svg>
@@ -111,20 +111,78 @@
         </ul>
       </div>
     </section>
+    <section class="cases">
+      <div class="cases__container container">
+        <h2 class="cases__title visually-hidden">Cases</h2>
+        <ul class="cases__list">
+          <li class="cases__item">
+            <article class="case">
+              <div class="case__wrap-content">
+                <h3 class="case__title">
+                  Honey created in&nbsp;the laps of&nbsp;nature.
+                </h3>
+                <p class="case__desc">
+                  Honey is&nbsp;one of&nbsp;the prime ingredients in&nbsp;your everyday food schedule.
+                  As&nbsp;a&nbsp;brand, you need a&nbsp;marketing strategy that will help...
+                </p>
+                <a href="#" class="case__link" btn target="_blank">
+                  Learn more
+                </a>
+              </div>
+              <div class="case__wrap-img">
+                <picture>
+                  <source srcset="img/cases/flower-honey.webp 1x, img/cases/flower-honey@2x.webp 2x" type="image/webp">
+                  <img class="case__img" src="img/cases/flower-honey.png" srcset="img/cases/flower-honey@2x.png 2x"
+                    width="424" height="543" alt="flower honey" loading="lazy">
+                </picture>
+                <picture>
+                  <source srcset="img/default/bee.webp 1x, img/default/bee@2x.webp 2x" type="image/webp">
+                  <img class="case__img case__img--bee" src="img/default/bee.png" srcset="img/default/bee@2x.png 2x"
+                    alt="bee" width="189" height="129" loading="lazy">
+                </picture>
+              </div>
+            </article>
+          </li>
+          <li class="cases__item">
+            <article class="case">
+              <div class="case__wrap-content">
+                <h3 class="case__title">
+                  Does your honey taste bad? Try us!
+                </h3>
+                <p class="case__desc">
+                  Honey is&nbsp;one of&nbsp;the prime ingredients in&nbsp;your everyday food schedule.
+                  As&nbsp;a&nbsp;brand, you need a&nbsp;marketing strategy that will help...
+                </p>
+                <a href="#" class="case__link" btn target="_blank">
+                  Learn more
+                </a>
+              </div>
+              <div class="case__wrap-img">
+                <picture>
+                  <source srcset="img/cases/honey-taste.webp 1x, img/cases/honey-taste@2x.webp 2x" type="image/webp">
+                  <img class="case__img" src="img/cases/honey-taste.png" srcset="img/cases/honey-taste@2x.png 2x"
+                    width="436" height="439" alt="honey taste" loading="lazy">
+                </picture>
+              </div>
+            </article>
+          </li>
+        </ul>
+      </div>
+    </section>
     <section class="product" id="products">
       <div class="product__container container">
-        <h2 class="product__title">Our Product</h2>
+        <h2 class="product__title">Our product</h2>
         <ul class="product__list">
           <li class="product__item">
             <article class="product-card">
               <div class="product-card__wrap-content">
-                <h3 class="product-card__title">Eucalyptus Honey</h3>
+                <h3 class="product-card__title">Eucalyptus honey</h3>
                 <p class="product-card__desc">
                   It&nbsp;has the scent of&nbsp;lavender, medium sweetnesslavender scented, and has a&nbsp;medium amber
                   color.
                 </p>
                 <button class="product-card__btn btn">
-                  <span>Buy Now</span>
+                  <span>Buy now</span>
                 </button>
               </div>
               <div class="product-card__wrap-img">
@@ -132,7 +190,7 @@
                   <source type="image/webp"
                     srcset="img/products/EucalyptusHoney.webp 1x, img/products/EucalyptusHoney@2x.webp 2x">
                   <img src="img/products/EucalyptusHoney.png" srcset="img/products/EucalyptusHoney@2x.png 2x"
-                    alt="EucalyptusHoney" width="234" height="248">
+                    alt="EucalyptusHoney" width="234" height="248" loading="lazy">
                 </picture>
               </div>
             </article>
@@ -140,13 +198,13 @@
           <li class="product__item">
             <article class="product-card">
               <div class="product-card__wrap-content">
-                <h3 class="product-card__title">Basswood Honey</h3>
+                <h3 class="product-card__title">Basswood honey</h3>
                 <p class="product-card__desc">
                   Basswood is&nbsp;a&nbsp;tree native and abundant in&nbsp;Wisconsin, which is&nbsp;also known
                   as&nbsp;the Linden tree.
                 </p>
                 <button class="product-card__btn btn">
-                  <span>Buy Now</span>
+                  <span>Buy now</span>
                 </button>
               </div>
               <div class="product-card__wrap-img">
@@ -154,7 +212,7 @@
                   <source type="image/webp"
                     srcset="img/products/BasswoodHoney.webp 1x, img/products/BasswoodHoney@2x.webp 2x">
                   <img src="img/products/BasswoodHoney.png" srcset="img/products/EucalyptusHoney@2x.png 2x"
-                    alt="BasswoodHoney" width="234" height="248">
+                    alt="BasswoodHoney" width="234" height="248" loading="lazy">
                 </picture>
               </div>
             </article>
@@ -165,7 +223,7 @@
   </main>
   <footer class="footer">
     <div class="footer__container container">
-      <a class="footer__logo logo" aria-label="Logo Honey">
+      <a href="/" class="footer__logo logo" aria-label="Logo Honey">
         <svg width="66" height="29" aria-hidden="true">
           <use xlink:href="img/sprite.svg#icon-logo"></use>
         </svg>

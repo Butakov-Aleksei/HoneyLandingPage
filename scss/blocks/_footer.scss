@@ -1,6 +1,6 @@
 .footer {
-  background-image: linear-gradient(56.85deg, #ff9d2d 1.663%,#ffd877 93.206%);
   padding: 45px 0;
+  background-image: linear-gradient(56.85deg, #ff9d2d 1.663%,#ffd877 93.206%);
 
   &__container {
     display: flex;
@@ -11,7 +11,18 @@
   }
 
   &__logo {
+    border-radius: 3px;
     color: $logo-f-color;
+    outline: 2px solid transparent;
+    outline-offset: 5px;
+    transition: outline-color $transition-300;
+
+    @include focus-visible {
+      outline: 2px solid $color-black;
+    }
+    @include any-hover {
+      outline: 2px solid $color-black;
+    }
   }
 
   &__desc {

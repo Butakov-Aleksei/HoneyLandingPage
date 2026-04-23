@@ -43,6 +43,7 @@
     font-size: 28px;
     font-weight: 600;
     line-height: 1.4;
+    text-transform: capitalize;
   }
 
   &__desc {
@@ -58,17 +59,17 @@
 
   &__btn {
     position: relative;
+    overflow: hidden;
     height: 50px;
     margin-top: auto;
     padding: 0 30px;
     color: $accent-color;
     transition: color $transition-300, border-radius $transition-300;
-    overflow: hidden;
 
     @include focus-visible {
       & {
-        color: $color-white;
         border-radius: 10px;
+        color: $color-white;
       }
 
       &::before {
@@ -77,8 +78,8 @@
     }
     @include any-hover {
       & {
-        color: $color-white;
         border-radius: 10px;
+        color: $color-white;
       }
 
       &::before {
