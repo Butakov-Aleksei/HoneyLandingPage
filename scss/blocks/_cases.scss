@@ -1,0 +1,16 @@
+.cases {
+  overflow: hidden;
+  margin: 0 0 clamp(1.875rem, .6849rem + 5.9504vw, 6.375rem);
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+
+    row-gap: clamp(1.875rem, .6849rem + 5.9504vw, 6.375rem);
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+  }
+}

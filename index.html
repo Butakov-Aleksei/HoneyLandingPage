@@ -13,6 +13,9 @@
   <link rel="manifest" href="site.webmanifest">
 
   <link rel="stylesheet" href="css/style.css">
+  <link rel="preload" href="fonts/KodchasanBold.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/KodchasanMedium.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/KodchasanSemiBold.woff2" as="font" crossorigin="anonymous">
   <title>HoneyLandingPage</title>
 </head>
 
@@ -116,17 +119,18 @@
         <h2 class="cases__title visually-hidden">Cases</h2>
         <ul class="cases__list">
           <li class="cases__item">
-            <article class="case">
+            <article class="case case--reverse">
               <div class="case__wrap-content">
                 <h3 class="case__title">
                   Honey created in&nbsp;the laps of&nbsp;nature.
                 </h3>
                 <p class="case__desc">
                   Honey is&nbsp;one of&nbsp;the prime ingredients in&nbsp;your everyday food schedule.
-                  As&nbsp;a&nbsp;brand, you need a&nbsp;marketing strategy that will help...
+                  As&nbsp;a&nbsp;brand, you need a&nbsp;marketing strategy that will help characteristically,
+                  revolutionize its perception.
                 </p>
-                <a href="#" class="case__link" btn target="_blank">
-                  Learn more
+                <a href="#" class="case__link btn" target="_blank">
+                  <span>Learn more</span>
                 </a>
               </div>
               <div class="case__wrap-img">
@@ -151,17 +155,18 @@
                 </h3>
                 <p class="case__desc">
                   Honey is&nbsp;one of&nbsp;the prime ingredients in&nbsp;your everyday food schedule.
-                  As&nbsp;a&nbsp;brand, you need a&nbsp;marketing strategy that will help...
+                  As&nbsp;a&nbsp;brand, you need a&nbsp;marketing strategy that will help characteristically,
+                  revolutionize its perception.
                 </p>
-                <a href="#" class="case__link" btn target="_blank">
-                  Learn more
+                <a href="#" class="case__link btn" target="_blank">
+                  <span>Learn more</span>
                 </a>
               </div>
               <div class="case__wrap-img">
                 <picture>
                   <source srcset="img/cases/honey-taste.webp 1x, img/cases/honey-taste@2x.webp 2x" type="image/webp">
-                  <img class="case__img" src="img/cases/honey-taste.png" srcset="img/cases/honey-taste@2x.png 2x"
-                    width="436" height="439" alt="honey taste" loading="lazy">
+                  <img class="case__img case__img--honey-taste" src="img/cases/honey-taste.png"
+                    srcset="img/cases/honey-taste@2x.png 2x" width="436" height="439" alt="honey taste" loading="lazy">
                 </picture>
               </div>
             </article>
