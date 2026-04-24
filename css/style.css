@@ -357,21 +357,30 @@ html {
 }
 
 body {
-  min-width: 320px;
-  background-color: #ffffff;
-  color: #000000;
-  font-weight: 500;
   display: flex;
   flex-direction: column;
+  min-width: 320px;
   min-height: 100vh;
   padding: 0;
   font-family: "Kodchasan", "Arial", sans-serif;
   font-size: 16px;
+  font-weight: 500;
+  color: #000000;
+  background-color: #ffffff;
   overflow-wrap: anywhere;
+}
+body:has(.main-nav--open) {
+  overflow: hidden;
 }
 
 main {
   flex-grow: 1;
+  padding-top: 100px;
+}
+@media (max-width: 1023px) {
+  main {
+    padding-top: 60px;
+  }
 }
 
 section {
@@ -380,8 +389,8 @@ section {
 
 img {
   display: block;
-  height: auto;
   max-width: 100%;
+  height: auto;
   object-fit: cover;
 }
 
@@ -390,7 +399,8 @@ a {
   text-decoration: none;
 }
 
-ul, ol {
+ul,
+ol {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -452,21 +462,163 @@ ul, ol {
   user-select: none;
 }
 
+.burger-menu {
+  position: relative;
+  display: none;
+  align-items: center;
+  flex-direction: column;
+  flex-shrink: 0;
+  justify-content: center;
+  width: 36px;
+  height: 24px;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  user-select: none;
+  z-index: 100;
+}
+@media (max-width: 767px) {
+  .burger-menu {
+    display: flex;
+  }
+}
+.burger-menu:focus {
+  outline: none;
+}
+.burger-menu:focus-visible .burger-menu__line {
+  background-color: #e58211;
+}
+.burger-menu:focus-visible .burger-menu__line::before, .burger-menu:focus-visible .burger-menu__line::after {
+  background-color: #e58211;
+}
+@media (any-hover: hover) {
+  .burger-menu:hover .burger-menu__line {
+    background-color: #e58211;
+  }
+  .burger-menu:hover .burger-menu__line::before, .burger-menu:hover .burger-menu__line::after {
+    background-color: #e58211;
+  }
+}
+.burger-menu--open:focus {
+  outline: none;
+}
+.burger-menu--open:focus-visible .burger-menu__line {
+  background-color: transparent;
+}
+@media (any-hover: hover) {
+  .burger-menu--open:hover .burger-menu__line {
+    background-color: transparent;
+  }
+}
+.burger-menu--open .burger-menu__line {
+  background-color: transparent;
+}
+.burger-menu--open .burger-menu__line::before {
+  top: 11px;
+  background-color: #000000;
+  transition: background-color 0.3s ease-in-out, top 0.3s ease-in-out, transform 0.3s ease-in-out 0.3s;
+  transform: translate(-50%, 0) rotate(-45deg);
+}
+.burger-menu--open .burger-menu__line::after {
+  top: 11px;
+  background-color: #000000;
+  transition: background-color 0.3s ease-in-out, top 0.3s ease-in-out, transform 0.3s ease-in-out 0.3s;
+  transform: translate(-50%, 0) rotate(45deg);
+}
+.burger-menu__line {
+  align-self: flex-end;
+  width: 60%;
+  height: 2px;
+  background-color: #000000;
+  transition: background-color 0.3s ease-in-out;
+}
+.burger-menu__line::before, .burger-menu__line::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 36px;
+  height: inherit;
+  background-color: inherit;
+  transition: background-color 0.3s ease-in-out, top 0.3s ease-in-out 0.3s, transform 0.3s ease-in-out;
+  transform: translate(-50%, 0);
+}
+.burger-menu__line::before {
+  top: 0;
+}
+.burger-menu__line::after {
+  top: 22px;
+}
+
+.main-nav {
+  z-index: 11;
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 767px) {
+  .main-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    visibility: hidden;
+    overflow: hidden;
+    overflow-y: auto;
+    width: 85%;
+    height: 100%;
+    opacity: 0;
+    background-color: #ffffff;
+    transition: opacity 0.3s ease-in-out 0.3s, visibility 0.3s ease-in-out 0.3s, transform 0.3s ease-in-out 0.3s, box-shadow 0.3s ease-in-out, border-radius 0.3s ease-in-out;
+    transform: translateX(100%);
+    pointer-events: none;
+  }
+  .main-nav--open {
+    visibility: visible;
+    border-top-left-radius: clamp(0.9375rem, -1.9708rem + 14.5414vw, 5rem);
+    border-bottom-left-radius: clamp(0.9375rem, -1.9708rem + 14.5414vw, 5rem);
+    opacity: 1;
+    box-shadow: 0 0 0 500px rgba(0, 0, 0, 0.8);
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out 0.3s, border-radius 0.3s ease-in-out 0.3s;
+    transform: translateX(0);
+    pointer-events: all;
+  }
+  .main-nav--open .main-nav__list {
+    opacity: 1;
+    transition: transform 0.5s ease-in-out 0.3s, opacity 0.3s ease-in-out 0.3s;
+    transform: translateX(0);
+  }
+}
 .main-nav__list {
   display: flex;
+  overflow-x: auto;
   align-items: center;
-  flex-wrap: wrap;
-  justify-content: center;
+  margin: -15px;
+  padding: 15px;
   gap: 15px 40px;
+}
+@media (max-width: 767px) {
+  .main-nav__list {
+    overflow-x: initial;
+    align-items: flex-start;
+    flex-direction: column;
+    flex-grow: 1;
+    margin: 0;
+    padding: 50px;
+    opacity: 0;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    transform: translateX(-20%);
+  }
 }
 .main-nav__item {
   display: flex;
+  flex-shrink: 0;
 }
 .main-nav__link {
   display: flex;
   align-items: center;
   flex-shrink: 0;
   justify-content: center;
+  margin: -3px;
+  padding: 3px;
   border-radius: 3px;
   font-size: 18px;
   font-weight: 500;
@@ -474,7 +626,6 @@ ul, ol {
   color: #000000;
   text-transform: capitalize;
   outline: 2px solid transparent;
-  outline-offset: 3px;
   transition: outline-color 0.3s ease-in-out;
 }
 .main-nav__link:focus {
@@ -486,6 +637,11 @@ ul, ol {
 @media (any-hover: hover) {
   .main-nav__link:hover {
     outline: 2px solid #e58211;
+  }
+}
+@media (max-width: 767px) {
+  .main-nav__link {
+    font-size: clamp(1.5rem, 0.7841rem + 3.5794vw, 2.5rem);
   }
 }
 .main-nav__link--active {
@@ -758,7 +914,28 @@ ul, ol {
 }
 
 .header {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100%;
   padding: 30px 0;
+}
+@media (max-width: 1023px) {
+  .header {
+    padding: 10px 0;
+  }
+}
+.header::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -5px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  filter: blur(6px);
 }
 .header__container {
   display: flex;

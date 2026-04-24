@@ -1,0 +1,100 @@
+.burger-menu {
+  position: relative;
+  display: none;
+  align-items: center;
+  flex-direction: column;
+  flex-shrink: 0;
+  justify-content: center;
+  width: $width-burger;
+  height: $height-burger;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  user-select: none;
+  z-index: 100;
+
+  $root: &;
+  @include vp-767 {
+    display: flex;
+  }
+  @include focus-visible {
+    #{$root}__line {
+      background-color: $accent-color;
+
+      &::before,
+      &::after {
+        background-color: $accent-color;
+      }
+    }
+  }
+  @include any-hover {
+    #{$root}__line {
+      background-color: $accent-color;
+
+      &::before,
+      &::after {
+        background-color: $accent-color;
+      }
+    }
+  }
+
+  &--open {
+    @include focus-visible {
+      #{$root}__line {
+        background-color: transparent;
+      }
+    }
+    @include any-hover {
+      #{$root}__line {
+        background-color: transparent;
+      }
+    }
+
+    #{$root}__line {
+      background-color: transparent;
+
+      &::before {
+        top: ($height-burger - $height-line) / 2;
+        background-color: $color-black;
+        transition: background-color $transition-300, top $transition-300, transform $transition-300 .3s;
+        transform: translate(-50%, 0) rotate(-45deg);
+      }
+
+      &::after {
+        top: ($height-burger - $height-line) / 2;
+        background-color: $color-black;
+        transition: background-color $transition-300, top $transition-300, transform $transition-300 .3s;
+        transform: translate(-50%, 0) rotate(45deg);
+      }
+    }
+  }
+
+  &__line {
+    align-self: flex-end;
+    width: 60%;
+    height: $height-line;
+    background-color: $color-black;
+    transition: background-color $transition-300;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      width: $width-burger;
+      height: inherit;
+      background-color: inherit;
+      transition: background-color $transition-300, top $transition-300 .3s, transform $transition-300;
+      transform: translate(-50%, 0);
+    }
+
+    &::before {
+      top: 0;
+    }
+
+    &::after {
+      top: $height-burger - $height-line;
+    }
+  }
+}
