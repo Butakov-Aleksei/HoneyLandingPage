@@ -7,8 +7,8 @@
     background-color: #ffd877;
     background-image: url("../img/hero/honey-hero-bees.png"), url("../img/hero/honey-hero.svg"), linear-gradient(56.85deg, #ff9d2d 1.663%,#ffd877 93.206%);
     background-image: image-set(
-    url("../img/hero/honey-hero-bees.webp") type("image/webp"),
-    url("../img/hero/honey-hero-bees.png") type("image/png")),
+    url("../img/hero/honey-hero-bees.webp") type("image/webp") 1x,
+    url("../img/hero/honey-hero-bees.png") type("image/png")) 1x,
     url("../img/hero/honey-hero.svg"),
     linear-gradient(56.85deg, #ff9d2d 1.663%,#ffd877 93.206%);
     background-repeat: no-repeat;
@@ -18,8 +18,8 @@
     @include bg-img-2x {
       background-image: url("../img/hero/honey-hero-bees@2x.png"), url("../img/hero/honey-hero.svg"), linear-gradient(56.85deg, #ff9d2d 1.663%,#ffd877 93.206%);
       background-image: image-set(
-      url("../img/hero/honey-hero-bees@2x.webp") type("image/webp"),
-      url("../img/hero/honey-hero-bees@2x.png") type("image/png")),
+      url("../img/hero/honey-hero-bees@2x.webp") type("image/webp") 2x,
+      url("../img/hero/honey-hero-bees@2x.png") type("image/png")) 2x,
       url("../img/hero/honey-hero.svg"),
       linear-gradient(56.85deg, #ff9d2d 1.663%,#ffd877 93.206%);
     }
@@ -64,16 +64,16 @@
       height: clamp(3.125rem, 1.8027rem + 6.6116vw, 8.125rem);
       background-image: url("../img/default/bee.png");
       background-image: image-set(
-      url("../img/default/bee.webp") type("image/webp"),
-      url("../img/default/bee.png") type("image/png"));
+      url("../img/default/bee.webp") type("image/webp") 1x,
+      url("../img/default/bee.png") type("image/png") 1x);
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
 
       @include bg-img-2x {
         background-image: image-set(
-        url("../img/default/bee@2x.webp") type("image/webp"),
-        url("../img/default/bee@2x.png") type("image/png"));
+        url("../img/default/bee@2x.webp") type("image/webp") 2x,
+        url("../img/default/bee@2x.png") type("image/png") 2x);
       }
     }
 
